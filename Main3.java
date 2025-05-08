@@ -17,10 +17,15 @@ public class Main3 {
         System.out.println("Введіть крок h:");
         double h = scanner.nextDouble();
 
-        double result = solver.RangeKutta2(x0, xn, y0, h);
+        double x = x0;
+        double y = y0;
 
         System.out.println("\nРезультати обчислень:");
-        System.out.printf("При x = %.2f, y = %.6f%n", xn, result);
+        for (double i = x0 + h ; i <= xn + 1e-10 ; i += h) {
+            y = solver.RangeKutta2(x, i, y, h);
+            x = i;
+            System.out.printf("При x = %.2f, y = %.6f%n", x, y);
+        }
 
         scanner.close();
     }
