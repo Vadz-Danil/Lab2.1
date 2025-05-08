@@ -38,7 +38,7 @@ public class Task2 {
         if (function(b) * secondDerivative(b) > 0){
             x = a;
            while (Math.abs(function(x))>ebs){
-               x = x - ((x - b) * function(x)) / (function(x) - function(b));
+               x = x - ((b - x) * function(x)) / (function(b) - function(x));
            }
         } else if (function(a) * secondDerivative(a) > 0) {
             x=b;
